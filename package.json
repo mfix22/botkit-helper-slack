@@ -1,5 +1,5 @@
 {
-  "name": "slack-string",
+  "name": "botkit-helper-slack",
   "version": "0.0.1",
   "description": "Never lookup the Slack formatting markup again",
   "main": "index.js",
@@ -13,5 +13,16 @@
     "messaging"
   ],
   "author": "Michael Fix",
-  "license": "ISC"
+  "license": "ISC",
+  "directories": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mfix22/botkit-helper-slack.git"
+  },
+  "bugs": {
+    "url": "https://github.com/mfix22/botkit-helper-slack/issues"
+  },
+  "homepage": "https://github.com/mfix22/botkit-helper-slack#readme"
 }
