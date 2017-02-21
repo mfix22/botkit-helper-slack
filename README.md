@@ -1,4 +1,4 @@
-# botkit-slack-helper
+# botkit-helper-slack
 #### Helps Slack bots get their point across
 
 
@@ -6,7 +6,7 @@ Never have to look up how to use **bold**, *italics*, ~~strikethrough~~, `code`,
 
 ### Getting started
 ```sh
-$ npm install --save botkit-slack-helper
+$ npm install --save botkit-helper-slack
 ```
 ___
 ### Usage
