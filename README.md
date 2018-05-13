@@ -11,7 +11,7 @@ $ npm install --save botkit-helper-slack
 ___
 ### Usage
 ```javascript
-var SS = require('botkit-slack-helper');
+var SS = require('botkit-helper-slack');
 
 SS('My Emphatic Decree!').italic()  // -> '_My Emphatic Decree!_' (in Slack italics)
 
