@@ -47,6 +47,27 @@ var __functions = {
     return new SS(":" + this.s.toLowerCase().split(' ').join('_').trim() + ":").s;
   },
 
+  date : function(options) {
+    options = options || {};
+    var time = this.s, format = options.format || "{date}";
+
+    if(!Number.isNaN(+time)) {
+      time = new Date(time * 1000);
+    }
+    else if(typeof time === "string") {
+      time = Date.parse(time);
+      if(!time) throw new Error("Parameter '" + this.s + "' cannot be turned into a Date.");
+      time = new Date(time);
+    }
+
+    var seconds = Math.floor(time.getTime() / 1000);
+
+    var code = "<!date^" + seconds + "^" + format;
+    if(options.link) code += "^" + options.link;
+
+    return code + "|" + (options.fallback || time.toUTCString()) + ">";
+  },
+
   // types of selectors
   //e.g. <@U123456>
   user : function() {

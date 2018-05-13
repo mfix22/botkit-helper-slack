@@ -33,30 +33,30 @@ SS.extendPrototype()
 'and this one'.slackItalic() //-> "_and this one_"
 ```
 ##### .italic( ) (slackItalic)
-Italicizes your string according to Slack format  
-`'italics'` -> `'_italics_'`  
+Italicizes your string according to Slack format
+`'italics'` -> `'_italics_'`
 _italics_
 
 ##### .bold( )  (slackBold)
-Bolds your string according to Slack format  
-`'bold'` -> `'*bold*'`  
+Bolds your string according to Slack format
+`'bold'` -> `'*bold*'`
 **bold**
 
 ##### .code( ) (slackCode)
-Makes your string look like `code` according to Slack format  
-`'code'` -> '\`code\`'  
+Makes your string look like `code` according to Slack format
+`'code'` -> '\`code\`'
 `code`
 
 ##### .pre( ) (slackPre)
-Makes your string look like `pre-formatted fixed width text` according to Slack format  
+Makes your string look like `pre-formatted fixed width text` according to Slack format
 `'pre'` -> `'```pre```'`
 ```
 pre
 ```
 
 ##### .strike( ) (slackStrike)
-Strikes through your string, according to Slack format  
-`'strike'` -> `'~strike~'`  
+Strikes through your string, according to Slack format
+`'strike'` -> `'~strike~'`
 ~~strike~~
 
 ##### .quote( ) (slackQuote)
@@ -65,7 +65,7 @@ Creates a single line quote. This function **does not** surround your string wit
 > quote
 
 ##### .paragraph( ) (slackParagraph)
-Creates a multi-line quote.  
+Creates a multi-line quote.
 `'paragraph'` -> `'>>> paragraph'`
 > Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
 
@@ -77,11 +77,11 @@ Formats your string into Slack emoji style.
 :do_not_litter:
 
 ##### .user( ) (slackUser)
-Formats your user ID into Slack's desired format  
+Formats your user ID into Slack's desired format
 `'U112233'` -> `'<@U112233>'`
 
 ##### .channel( ) (slackChannel)
-Formats your channel ID into Slack's desired format  
+Formats your channel ID into Slack's desired format
 `'C445566'` -> `'<@C445566>'`
 
 ##### .subteam(handle) (slackSubteam)
@@ -89,6 +89,20 @@ Will create message linking to the subteam ID viewed as _required_ @`handle`
 ```javascript
 // having called extendPrototype()
 'S289524'.slackSubteam('the-homies') //-> '<!subteam^S289524|the-homies>'
+```
+
+##### .date(options) (slackDate)
+Formats your date using _optional_ `options`. Date can be a seconds since the epoch, a string, or an instance of `Date`
+```javascript
+SS(1526249506).date() // -> '<!date^1526249506^{date}|Sun, 13 May 2018 22:11:46 GMT>'
+SS(new Date()).date()
+SS('2018-05-13').date()
+
+var options = {format: '{date} at {time}', link: 'http://example.com', fallback: 'Some great date'};
+SS('1526249506').date(options) // -> '<!date^1526249506^{date} at {time}^http://example.com|Some great date>');
+
+// having called extendPrototype()
+'2018-05-13'.slackDate(options)
 ```
 
 ##### .url(handle) (slackSubteam)
