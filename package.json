@@ -1,6 +1,6 @@
 {
   "name": "botkit-helper-slack",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Never lookup the Slack formatting markup again",
   "main": "index.js",
   "scripts": {
